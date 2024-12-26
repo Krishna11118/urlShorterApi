@@ -1,0 +1,26 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URI=mongodb+srv://krishnassss365:mangomongo@cluster0.p3i4r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - REDIS_URL=redis://default:rtnsUDJzm0fYrHWUnsmSmXFk0nHMRk35@redis-12234.c245.us-east-1-3.ec2.redns.redis-cloud.com:12234
+    depends_on:
+      - mongo
+      - redis
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  mongo-data:
+
