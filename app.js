@@ -2,11 +2,11 @@ import express from 'express';
 import mongoose from 'mongoose';
 import redis from 'redis';
 import { config } from 'dotenv';
-import authRoutes from './routes/auth.js';
-import urlRoutes from './routes/url.js';
-import analyticsRoutes from './routes/analytics.js';
-import { errorHandler } from './middleware/errorHandler.js';
-import { createShortUrlLimiter } from './middleware/rateLimiter.js';
+import authRoutes from './src/routes/auth.js';
+import urlRoutes from './src/routes/url.js';
+import analyticsRoutes from './src/routes/analytics.js';
+import { errorHandler } from './src/middleware/errorHandler.js';
+import { createShortUrlLimiter } from './src/middleware/rateLimiter.js';
 
 config();
 
